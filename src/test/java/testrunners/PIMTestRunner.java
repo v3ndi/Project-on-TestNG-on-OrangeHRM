@@ -31,10 +31,12 @@ public class PIMTestRunner extends PageSetup {
         String lastName= faker.name().lastName();
         String username=faker.name().username();
         String password="P@ssword123";
-        pimModule.filUp(firstName,lastName,username,password);
+        pimModule.filUp(firstName,lastName,"0327",username,password); // er jonno onno arekta perameter kivabe nibo?
+
         String titleTextActual=driver.findElement(By.xpath("//h6[text()=\"Personal Details\"]")).getText();
         String titleTextExpected = "Personal Details";
         Assert.assertEquals(titleTextActual,titleTextExpected);
+
 
         Utils.saveUsers(firstName,lastName,username,password);
     }

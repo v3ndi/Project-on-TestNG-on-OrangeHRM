@@ -1,1 +1,12 @@
-[{"password":"admin123","username":"admin"},{"firstName":"Rufina","lastName":"Dietrich","password":"P@ssword123","username":"willene.raynor"},{"firstName":"Lesli","lastName":"Prohaska","password":"P@ssword123","username":"leo.shields"},{"firstName":"Caren","lastName":"Luettgen","password":"P@ssword123","username":"lili.ryan"},{"firstName":"Collene","lastName":"Streich","password":"P@ssword123","username":"otelia.rosenbaum"},{"firstName":"Jutta","lastName":"Flatley","password":"P@ssword123","username":"agripina.cummerata"},{"firstName":"Bethany","lastName":"Mills","password":"P@ssword123","username":"dong.macgyver"}]
+[
+  {
+    "password": "admin123",
+    "username": "admin"
+  },
+  {
+    "firstName": "Esteban",
+    "lastName": "Wiegand",
+    "password": "P@ssword123",
+    "username": "hanh.mosciski"
+  }
+]
