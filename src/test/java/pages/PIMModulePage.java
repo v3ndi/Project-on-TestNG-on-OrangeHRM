@@ -17,29 +17,33 @@ public class PIMModulePage {
     WebElement firstNameText;
     @FindBy(name = "lastName")
     WebElement lastNameText;
-    @FindBy(className = "oxd-input")
-    List<WebElement> employeeIDText;
     @FindBy(className = "oxd-switch-input--active")
     WebElement toggleBtn;
     @FindBy(className = "oxd-input")
     List<WebElement> toggleEnableAndUserPassField;
     @FindBy(className = "orangehrm-left-space")
     WebElement submitBtn;
+
+    @FindBy(className = "oxd-input")
+    List<WebElement> employeeIDText;
+
     public PIMModulePage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 
-    public void filUp(String firstName,String lastName,String employeeID,String username,String password) {
+
+    public void filUp(String firstName,String lastName,String username,String password) {
         menuItem.get(1).click();
         addBtn.get(2).click();
         firstNameText.sendKeys(firstName);
         lastNameText.sendKeys(lastName);
-        String employeeID1=employeeIDText.get(4).getAttribute("innerText");
-        System.out.println("Employee ID: "+employeeID1);
         toggleBtn.click();
         toggleEnableAndUserPassField.get(5).sendKeys(username);
         toggleEnableAndUserPassField.get(6).sendKeys(password);
         toggleEnableAndUserPassField.get(7).sendKeys(password);
         submitBtn.click();
+    }
+    public String getEmployeeID() {
+        return employeeIDText.get(4).getAttribute("value");
     }
 }

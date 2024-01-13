@@ -1,12 +1,9 @@
 [
   {
-    "password": "admin123",
-    "username": "admin"
-  },
-  {
-    "firstName": "Esteban",
-    "lastName": "Wiegand",
+    "firstName": "Graig",
+    "lastName": "Abshire",
     "password": "P@ssword123",
-    "username": "hanh.mosciski"
+    "employeeId": "0269",
+    "username": "darrin.ward"
   }
 ]

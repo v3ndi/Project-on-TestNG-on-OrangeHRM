@@ -19,6 +19,6 @@ public class PageSetup {
 
     @AfterTest
     public void close(){
-        driver.close();
+        //driver.close();
     }
 }
