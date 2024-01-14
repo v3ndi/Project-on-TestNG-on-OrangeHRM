@@ -54,7 +54,6 @@ public class PIMModulePage {
     public String getEmployeeID() {
         return employeeIDText.get(4).getAttribute("value");
     }
-
     public void searchEmployeeById(String employeeIdJson) {
         menuItem.get(1).click();
         employeeIDText.get(1).sendKeys(employeeIdJson);

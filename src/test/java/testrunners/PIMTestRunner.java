@@ -66,7 +66,6 @@ public class PIMTestRunner extends PageSetup {
         String employeeIdJson = Utils.getUserFromJsonArray().get("employeeId").toString();
         pimModule.searchEmployeeById(employeeIdJson);
         String titleTextExpected=driver.findElements(By.className("oxd-table-cell")).get(1).getText();
-
         Thread.sleep(3000);
         Utils.scroll(driver,0,150);
         Assert.assertEquals(titleTextExpected, employeeIdJson);
@@ -80,6 +79,4 @@ public class PIMTestRunner extends PageSetup {
         String nameTitleExpected=driver.findElement(By.className("orangehrm-directory-card-header")).getText();
         Assert.assertTrue(nameTitleExpected.startsWith(firstNameActualUser));
     }
-
-
 }
