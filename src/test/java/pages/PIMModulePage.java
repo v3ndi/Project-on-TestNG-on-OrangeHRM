@@ -57,7 +57,8 @@ public class PIMModulePage {
     public void searchEmployeeById(String employeeIdJson) {
         menuItem.get(1).click();
         employeeIDText.get(1).sendKeys(employeeIdJson);
-        employeeIDText.get(1).sendKeys(Keys.ENTER);
+        searchButton.click();
+
     }
 
     public void searchEmployeeByName(String firstName) throws InterruptedException {

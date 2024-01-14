@@ -65,10 +65,12 @@ public class PIMTestRunner extends PageSetup {
         pimModule = new PIMModulePage(driver);
         String employeeIdJson = Utils.getUserFromJsonArray().get("employeeId").toString();
         pimModule.searchEmployeeById(employeeIdJson);
-        String titleTextExpected=driver.findElements(By.className("oxd-table-cell")).get(1).getText();
-        Thread.sleep(3000);
-        Utils.scroll(driver,0,150);
+
+        Utils.scroll(driver,0,80);
+        String titleTextExpected=driver.findElements(By.className("oxd-padding-cell")).get(10).getText();
+        Thread.sleep(1000);
         Assert.assertEquals(titleTextExpected, employeeIdJson);
+
     }
     @Test(priority = 3)
     public void searchEmployeeByName() throws IOException, ParseException, InterruptedException {
