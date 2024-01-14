@@ -5,6 +5,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -37,5 +39,15 @@ public class Utils {
 
         return (JSONObject) empArray.get(empArray.size()-1);
 
+    }
+
+    public static void scroll(WebDriver driver, int w, int h){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy("+w+","+h+")","");
+    }
+
+    public static void scroll(WebDriver driver){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
 }
