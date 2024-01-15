@@ -68,8 +68,8 @@ public class PIMTestRunner extends PageSetup {
 
         Utils.scroll(driver,0,80);
         String titleTextExpected=driver.findElements(By.className("oxd-padding-cell")).get(10).getText();
-        Thread.sleep(1000);
-        Assert.assertEquals(titleTextExpected, employeeIdJson);
+        Thread.sleep(2000);
+        Assert.assertEquals(employeeIdJson,titleTextExpected);
 
     }
     @Test(priority = 3)
@@ -81,4 +81,13 @@ public class PIMTestRunner extends PageSetup {
         String nameTitleExpected=driver.findElement(By.className("orangehrm-directory-card-header")).getText();
         Assert.assertTrue(nameTitleExpected.startsWith(firstNameActualUser));
     }
+    @Test (priority = 4)
+    public void logOut(){
+        loginPage = new LoginCredPage(driver);
+        loginPage.dologOut();
+        String textActual = driver.findElement(By.className("orangehrm-login-title")).getText();
+        String textExpected = "Login";
+        Assert.assertEquals(textActual, textExpected);
+    }
+
 }

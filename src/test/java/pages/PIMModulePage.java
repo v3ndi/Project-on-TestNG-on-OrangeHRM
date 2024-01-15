@@ -14,7 +14,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.List;
 
 public class PIMModulePage {
-    WebDriver driver;
     @FindBy(className = "oxd-main-menu-item--name")
     List<WebElement> menuItem;
     @FindBy(className = "oxd-button--medium")
@@ -35,6 +34,8 @@ public class PIMModulePage {
     WebElement searchBoxWithHint;
     @FindBy(xpath = "//button[@type=\"submit\"]")
     WebElement searchButton;
+
+
 
     public PIMModulePage(WebDriver driver){
         PageFactory.initElements(driver, this);
@@ -57,6 +58,7 @@ public class PIMModulePage {
     public void searchEmployeeById(String employeeIdJson) {
         menuItem.get(1).click();
         employeeIDText.get(1).sendKeys(employeeIdJson);
+        employeeIDText.get(1).sendKeys(Keys.ENTER);
         searchButton.click();
 
     }
@@ -71,4 +73,5 @@ public class PIMModulePage {
         searchButton.click();
         Thread.sleep(3000);
     }
+
 }
