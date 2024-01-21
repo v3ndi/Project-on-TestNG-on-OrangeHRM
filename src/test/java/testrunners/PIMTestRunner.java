@@ -28,18 +28,17 @@ public class PIMTestRunner extends PageSetup {
     LoginCredPage loginPage;
 
 
-    @BeforeTest
+    @BeforeTest(groups = "smoke",description = "log in as admin")
     public void doLoginWithValidCreds() {
         loginPage = new LoginCredPage(driver);
         loginPage.doLogin("admin", "admin123");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1,description="admin can create User")
     public void pimCreateUser() throws IOException, ParseException, InterruptedException {
 
         pimModule = new PIMModulePage(driver);
         Faker faker = new Faker();
-
 
         String firstName=faker.name().firstName();
         String lastName= faker.name().lastName();
@@ -60,28 +59,29 @@ public class PIMTestRunner extends PageSetup {
         empModel.setEmployeeId(employeeId);
         Utils.saveUsers(empModel);
     }
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "smoke",description="after creating user, admin can search a user by employee ID")
     public void searchEmployeeById() throws IOException, ParseException, InterruptedException {
         pimModule = new PIMModulePage(driver);
         String employeeIdJson = Utils.getUserFromJsonArray().get("employeeId").toString();
         pimModule.searchEmployeeById(employeeIdJson);
 
         Utils.scroll(driver,0,80);
+        Thread.sleep(1000);
         String titleTextExpected=driver.findElements(By.className("oxd-padding-cell")).get(10).getText();
-        Thread.sleep(2000);
         Assert.assertEquals(employeeIdJson,titleTextExpected);
+        Thread.sleep(2000);
 
     }
-    @Test(priority = 3)
+    @Test(priority = 3,description="after creating user admin can search a user by username")
     public void searchEmployeeByName() throws IOException, ParseException, InterruptedException {
         pimModule = new PIMModulePage(driver);
         String firstNameActualUser=Utils.getUserFromJsonArray().get("firstName").toString();
         pimModule.searchEmployeeByName(firstNameActualUser);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         String nameTitleExpected=driver.findElement(By.className("orangehrm-directory-card-header")).getText();
         Assert.assertTrue(nameTitleExpected.startsWith(firstNameActualUser));
     }
-    @Test (priority = 4)
+    @Test (priority = 4,groups = "smoke",description = "admin successfully log out")
     public void logOut(){
         loginPage = new LoginCredPage(driver);
         loginPage.dologOut();

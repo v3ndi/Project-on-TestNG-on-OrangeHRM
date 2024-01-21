@@ -55,11 +55,12 @@ public class PIMModulePage {
     public String getEmployeeID() {
         return employeeIDText.get(4).getAttribute("value");
     }
-    public void searchEmployeeById(String employeeIdJson) {
+    public void searchEmployeeById(String employeeIdJson) throws InterruptedException {
         menuItem.get(1).click();
         employeeIDText.get(1).sendKeys(employeeIdJson);
+        Thread.sleep(1000);
         employeeIDText.get(1).sendKeys(Keys.ENTER);
-        searchButton.click();
+//        searchButton.click();
 
     }
 

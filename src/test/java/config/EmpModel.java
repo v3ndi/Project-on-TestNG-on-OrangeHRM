@@ -48,7 +48,6 @@ public class EmpModel {
     }
 
     public EmpModel(){
-
     }
     public EmpModel(String firstName, String lastName, String username, String password, String employeeId){
         this.firstName=firstName;

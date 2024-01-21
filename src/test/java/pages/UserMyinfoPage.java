@@ -1,16 +1,10 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import utils.Utils;
-
 import java.util.List;
 
 public class UserMyinfoPage {
@@ -27,7 +21,7 @@ public class UserMyinfoPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void userMyInfo() throws InterruptedException {
+    public void userMyInfoAndGender() throws InterruptedException {
         menuItem.get(2).click();
         Thread.sleep(3000);
         genderRadioButton.get(0).click();
@@ -38,6 +32,18 @@ public class UserMyinfoPage {
         Thread.sleep(3000);
         bloodTypeDropDown.get(2).click();
         for(int i=0;i<5;i++){
+            bloodTypeDropDown.get(2).sendKeys(Keys.ARROW_DOWN);
+            Thread.sleep(1000);
+        }
+        bloodTypeDropDown.get(2).sendKeys(Keys.ENTER);
+        Thread.sleep(4000);
+        userSavebtn.get(1).click();
+    }
+    public void userBloodTypeUpdate() throws InterruptedException {
+        menuItem.get(2).click();
+        Thread.sleep(3000);
+        bloodTypeDropDown.get(2).click();
+        for(int i=0;i<8;i++){
             bloodTypeDropDown.get(2).sendKeys(Keys.ARROW_DOWN);
             Thread.sleep(1000);
         }

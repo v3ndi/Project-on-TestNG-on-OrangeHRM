@@ -31,7 +31,6 @@ public class LoginCredPage {
     public void dologOut(){
         lblButton.click();
         dropDownBtn.get(3).click();
-
     }
 }
 

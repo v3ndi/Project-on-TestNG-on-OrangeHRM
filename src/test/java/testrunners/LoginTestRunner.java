@@ -17,7 +17,7 @@ import java.io.IOException;
 public class LoginTestRunner extends PageSetup {
 
     LoginCredPage loginPage;
-    @Test(priority = 1,enabled = true)
+    @Test(priority = 1,description="can not log in with wrong user name ")
     public void doLoginWithWrongUser(){
         loginPage = new LoginCredPage(driver);
         loginPage.doLogin("abmin","admin123");
@@ -26,7 +26,7 @@ public class LoginTestRunner extends PageSetup {
         Assert.assertEquals(textActual, textExpected);
     }
 
-    @Test(priority = 2,enabled = true)
+    @Test(priority = 2,description="can not log in with wrong password")
     public void doLoginWithWrongPassword(){
         loginPage = new LoginCredPage(driver);
         loginPage.doLogin("admin","admin123wqert");
@@ -35,8 +35,8 @@ public class LoginTestRunner extends PageSetup {
         Assert.assertEquals(textActual, textExpected);
     }
 
-    @Test(priority = 3)
-    public void doLoginWithValidCreds() throws IOException, ParseException, IOException {
+    @Test(priority = 3,description="can log in with valid username and password")
+    public void doLoginWithValidCreds() throws ParseException, IOException {
         loginPage = new LoginCredPage(driver);
         String fileLocation="./src/test/resources/employee.json";
         JSONParser parser=new JSONParser();
@@ -52,7 +52,7 @@ public class LoginTestRunner extends PageSetup {
         String textExpected = "Dashboard";
         Assert.assertEquals(textActual, textExpected);
     }
-    @Test (priority = 4)
+    @Test (priority = 4,description="log out Successfully ")
     public void logOut(){
         loginPage = new LoginCredPage(driver);
         loginPage.dologOut();
