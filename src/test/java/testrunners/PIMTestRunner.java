@@ -5,29 +5,18 @@ import config.EmpModel;
 import config.PageSetup;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 import pages.LoginCredPage;
 import pages.PIMModulePage;
 import utils.Utils;
-
 import java.io.IOException;
-import java.util.List;
 import org.apache.commons.lang3.RandomStringUtils;
+
 public class PIMTestRunner extends PageSetup {
-
-
     PIMModulePage pimModule;
     LoginCredPage loginPage;
-
-
     @BeforeTest(groups = "smoke",description = "log in as admin")
     public void doLoginWithValidCreds() {
         loginPage = new LoginCredPage(driver);
@@ -40,7 +29,6 @@ public class PIMTestRunner extends PageSetup {
         String specialChars = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
         String allChars = upperCaseChars + lowerCaseChars + numericChars + specialChars + numericChars;
         return RandomStringUtils.random(12, allChars);
-
     }
     @Test(priority = 1,description="Can not create User without firstname and lastname")
     public void canNotCreateUser() throws InterruptedException {
@@ -52,9 +40,7 @@ public class PIMTestRunner extends PageSetup {
     }
     @Test(priority = 2,description="Admin creating User successfully")
     public void pimCreateUser() throws IOException, ParseException, InterruptedException {
-
         pimModule = new PIMModulePage(driver);
-
         Faker faker = new Faker();
         String firstName=faker.name().firstName();
         String lastName= faker.name().lastName();
@@ -87,7 +73,6 @@ public class PIMTestRunner extends PageSetup {
         Assert.assertEquals(employeeIdJson,titleTextExpected);
         Thread.sleep(2000);
     }
-
     @Test(priority = 4,description="Searching a user by Wrong employee ID")
     public void searchEmployeeByWrongId() throws IOException, ParseException, InterruptedException {
         pimModule = new PIMModulePage(driver);
@@ -100,7 +85,6 @@ public class PIMTestRunner extends PageSetup {
         Assert.assertEquals(actualTittle,titleTextExpected);
         Thread.sleep(2000);
     }
-
     @Test(priority = 5,description="After creating user, admin searching a user by username")
     public void searchEmployeeByName() throws IOException, ParseException, InterruptedException {
         pimModule = new PIMModulePage(driver);
@@ -110,7 +94,6 @@ public class PIMTestRunner extends PageSetup {
         String nameTitleExpected=driver.findElement(By.className("orangehrm-directory-card-header")).getText();
         Assert.assertTrue(nameTitleExpected.startsWith(firstNameActualUser));
     }
-
     @Test(priority = 6,description="Admin searching a user by Wrong username")
     public void searchEmployeeByWrongName() throws IOException, ParseException, InterruptedException {
         pimModule = new PIMModulePage(driver);
@@ -121,7 +104,6 @@ public class PIMTestRunner extends PageSetup {
         String nameTitleExpected=driver.findElements(By.className("oxd-text")).get(14).getText();
         Assert.assertTrue(nameTitleExpected.startsWith(actualTitle));
     }
-
     @Test (priority = 7,groups = "smoke",description = "Admin successfully log out")
     public void logOut(){
         loginPage = new LoginCredPage(driver);
@@ -130,5 +112,4 @@ public class PIMTestRunner extends PageSetup {
         String textExpected = "Login";
         Assert.assertEquals(textActual, textExpected);
     }
-
 }

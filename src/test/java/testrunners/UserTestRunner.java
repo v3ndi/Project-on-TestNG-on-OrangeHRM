@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 import pages.LoginCredPage;
 import pages.UserMyinfoPage;
 import utils.Utils;
@@ -16,8 +15,6 @@ import java.io.IOException;
 public class UserTestRunner extends PageSetup {
     LoginCredPage loginPage;
     UserMyinfoPage userMyinfoPage;
-
-
     @Test(priority = 1,description = "Newly created user trying to log in with Invalid Credential")
     public void doLoginWithInValidCreds() throws IOException, ParseException {
         loginPage = new LoginCredPage(driver);
@@ -28,7 +25,6 @@ public class UserTestRunner extends PageSetup {
         String textActual = driver.findElements(By.className("oxd-text")).get(1).getText();
         Assert.assertEquals(textActual,titleExpected);
     }
-
     @Test(priority = 2,groups = "smoke",description = "Newly created user can log in with valid Credential")
     public void doLoginWithValidCreds() throws IOException, ParseException {
         loginPage = new LoginCredPage(driver);
@@ -41,7 +37,6 @@ public class UserTestRunner extends PageSetup {
         String textActual = driver.findElement(By.className("oxd-userdropdown-name")).getText();
         Assert.assertEquals(textActual,fullNameExpected);
     }
-
     @Test(priority = 3,description = "Selecting Wrong Gender and saving it")
     public void myInfoWrongGender() throws InterruptedException {
         userMyinfoPage = new UserMyinfoPage(driver);
@@ -53,7 +48,6 @@ public class UserTestRunner extends PageSetup {
             Assert.assertTrue(true);
         }
     }
-
     @Test(priority = 4,description = "User selecting Gender and saving it")
     public void myInfoGender() throws InterruptedException {
         userMyinfoPage = new UserMyinfoPage(driver);
@@ -65,7 +59,6 @@ public class UserTestRunner extends PageSetup {
             Assert.assertTrue(true);
         }
     }
-
     @Test(priority = 5,description = "Set blood Type from user my info option and save it")
     public void bloodType() throws InterruptedException {
         userMyinfoPage = new UserMyinfoPage(driver);
@@ -75,7 +68,6 @@ public class UserTestRunner extends PageSetup {
         String bloodExpected ="O+";
         Assert.assertEquals(bloodActual,bloodExpected);
     }
-
     @Test(priority = 6,groups = "smoke",description = "Update blood Type from O+ to AB- and save it")
     public void bloodTypeUpdate() throws InterruptedException {
         userMyinfoPage = new UserMyinfoPage(driver);
@@ -94,7 +86,6 @@ public class UserTestRunner extends PageSetup {
         String bloodExpected ="AB+";
         Assert.assertNotEquals(bloodActual,bloodExpected);
     }
-
     @Test (priority = 8,description = "User Unable to log out")
     public void unableTologOut(){
         loginPage = new LoginCredPage(driver);

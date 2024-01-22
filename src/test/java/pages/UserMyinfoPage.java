@@ -17,6 +17,7 @@ public class UserMyinfoPage {
     List<WebElement> bloodTypeDropDown;
     @FindBy(className = "oxd-button--secondary")
     List<WebElement> userSavebtn;
+
     public UserMyinfoPage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }

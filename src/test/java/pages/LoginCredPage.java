@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.List;
 
 public class LoginCredPage {
@@ -14,7 +13,6 @@ public class LoginCredPage {
     WebElement passwordText;
     @FindBy (className = "oxd-button")
     WebElement loginButton;
-
     @FindBy(className = "oxd-userdropdown-name")
     WebElement lblButton;
     @FindBy(className = "oxd-userdropdown-link")
@@ -28,7 +26,6 @@ public class LoginCredPage {
         passwordText.sendKeys(password);
         loginButton.click();
     }
-
     public void unableToLogOut(){
         lblButton.click();
         dropDownBtn.get(2).click();

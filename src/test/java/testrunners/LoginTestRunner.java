@@ -9,8 +9,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginCredPage;
-
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -25,7 +23,6 @@ public class LoginTestRunner extends PageSetup {
         String textExpected = "Invalid credentials";
         Assert.assertEquals(textActual, textExpected);
     }
-
     @Test(priority = 2,description="can not log in with wrong password")
     public void doLoginWithWrongPassword(){
         loginPage = new LoginCredPage(driver);
@@ -34,7 +31,6 @@ public class LoginTestRunner extends PageSetup {
         String textExpected = "Invalid credentials";
         Assert.assertEquals(textActual, textExpected);
     }
-
     @Test(priority = 3,description="can log in with valid username and password")
     public void doLoginWithValidCreds() throws ParseException, IOException {
         loginPage = new LoginCredPage(driver);

@@ -3,14 +3,8 @@ package pages;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import utils.Utils;
-import org.openqa.selenium.JavascriptExecutor;
-
-
 import java.util.List;
 
 public class PIMModulePage {
@@ -35,12 +29,9 @@ public class PIMModulePage {
     @FindBy(xpath = "//button[@type=\"submit\"]")
     WebElement searchButton;
 
-
-
     public PIMModulePage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
-
     public void notCreatingUser() throws InterruptedException {
         menuItem.get(1).click();
         addBtn.get(2).click();
@@ -67,7 +58,6 @@ public class PIMModulePage {
         Thread.sleep(1000);
         employeeIDText.get(1).sendKeys(Keys.ENTER);
     }
-
     public void searchEmployeeByName(String firstName) throws InterruptedException {
         menuItem.get(8).click();
         searchBoxWithHint.click();
@@ -78,5 +68,4 @@ public class PIMModulePage {
         searchButton.click();
         Thread.sleep(3000);
     }
-
 }

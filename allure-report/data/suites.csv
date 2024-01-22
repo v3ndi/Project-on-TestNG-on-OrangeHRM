@@ -1,6 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Jan 22 15:34:35 BDT 2024","Mon Jan 22 15:34:49 BDT 2024","14420","Orange HRM portal Automation","User Login","testrunners.UserTestRunner","testrunners.UserTestRunner","bloodTypeUpdate","Update blood Type from O+ to AB- and save it",""
-"passed","Mon Jan 22 15:34:10 BDT 2024","Mon Jan 22 15:34:18 BDT 2024","8425","Orange HRM portal Automation","User Create","testrunners.PIMTestRunner","testrunners.PIMTestRunner","searchEmployeeById","After creating user, admin searching a user by employee ID",""
-"passed","Mon Jan 22 15:34:49 BDT 2024","Mon Jan 22 15:34:51 BDT 2024","2012","Orange HRM portal Automation","User Login","testrunners.UserTestRunner","testrunners.UserTestRunner","logOut","User successfully log out",""
-"passed","Mon Jan 22 15:34:18 BDT 2024","Mon Jan 22 15:34:20 BDT 2024","1963","Orange HRM portal Automation","User Create","testrunners.PIMTestRunner","testrunners.PIMTestRunner","logOut","Admin successfully log out",""
-"passed","Mon Jan 22 15:34:32 BDT 2024","Mon Jan 22 15:34:35 BDT 2024","3023","Orange HRM portal Automation","User Login","testrunners.UserTestRunner","testrunners.UserTestRunner","doLoginWithValidCreds","Newly created user can log in with valid Credential",""
