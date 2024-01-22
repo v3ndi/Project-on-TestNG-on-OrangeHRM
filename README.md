@@ -30,5 +30,7 @@ Behaviour of master smoke test:
 ![Smoke test report by TESTNG](https://github.com/v3ndi/Project-on-TestNG-on-OrangeHRM/assets/83697980/8d58ac8a-fde0-4745-9100-9e285a1b1c59)
 
 
-## Test Case
+## Test Case:
 https://docs.google.com/spreadsheets/d/1786FtwO8AFGpqZXTrRRKt_UD0gh2dTLHlRAj_aRwSUM/edit?usp=sharing
+## Run Time video:
+https://www.loom.com/share/5aa21a5d92cd4f528f96bfb94a45700d?sid=abc2e165-9eae-4209-8c36-f52d427a816a
