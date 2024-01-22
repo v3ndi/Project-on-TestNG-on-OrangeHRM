@@ -13,7 +13,7 @@ Make sure you have the following prerequisites installed on your machine:
 ## How To Run This Project
 - Clone this project:
   ```[https://github.com/v3ndi/shourav-s_basic_api_test_on_dmoney](https://github.com/v3ndi/Project-on-TestNG-on-OrangeHRM.git)```
-- run build.gradle and fro
+- Run build.gradle.
 - In the terminal fllowing command:
   ```gradle clean test -PsuiteName="MasterRegressionSuite.xml"```
 
