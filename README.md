@@ -1,4 +1,24 @@
+# Project on Selenium and TestNG with Gradle
 
+This project is a Selenium and TestNG automation project using Gradle.
+
+## Prerequisites
+
+Make sure you have the following prerequisites installed on your machine:
+
+- Java JDK (version X.X or later)
+- Gradle (version X.X or later)
+- Web browser (Chrome, Firefox, etc.)
+
+## How To Run This Project
+- Clone this project:
+  ```[https://github.com/v3ndi/shourav-s_basic_api_test_on_dmoney](https://github.com/v3ndi/Project-on-TestNG-on-OrangeHRM.git)```
+- run build.gradle and fro
+- In the terminal fllowing command:
+  ```gradle clean test -PsuiteName="MasterRegressionSuite.xml"```
+
+
+## Allure reports
 Overview of master regression test:
 ![Master test overview](https://github.com/v3ndi/Project-on-TestNG-on-OrangeHRM/assets/83697980/4b559916-0d58-4fa9-9052-c3c1690595d3)
 Behaviour of master regression test:
@@ -9,3 +29,6 @@ Overview of master smoke test:
 Behaviour of master smoke test:
 ![Smoke test report by TESTNG](https://github.com/v3ndi/Project-on-TestNG-on-OrangeHRM/assets/83697980/8d58ac8a-fde0-4745-9100-9e285a1b1c59)
 
+
+## Test Case
+https://docs.google.com/spreadsheets/d/1786FtwO8AFGpqZXTrRRKt_UD0gh2dTLHlRAj_aRwSUM/edit?usp=sharing
