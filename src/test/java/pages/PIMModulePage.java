@@ -41,6 +41,12 @@ public class PIMModulePage {
         PageFactory.initElements(driver, this);
     }
 
+    public void notCreatingUser() throws InterruptedException {
+        menuItem.get(1).click();
+        addBtn.get(2).click();
+        Thread.sleep(1000);
+        submitBtn.click();
+    }
     public void filUp(String firstName,String lastName,String username,String password) {
         menuItem.get(1).click();
         addBtn.get(2).click();
@@ -60,8 +66,6 @@ public class PIMModulePage {
         employeeIDText.get(1).sendKeys(employeeIdJson);
         Thread.sleep(1000);
         employeeIDText.get(1).sendKeys(Keys.ENTER);
-//        searchButton.click();
-
     }
 
     public void searchEmployeeByName(String firstName) throws InterruptedException {

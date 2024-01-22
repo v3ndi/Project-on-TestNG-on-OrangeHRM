@@ -28,6 +28,11 @@ public class LoginCredPage {
         passwordText.sendKeys(password);
         loginButton.click();
     }
+
+    public void unableToLogOut(){
+        lblButton.click();
+        dropDownBtn.get(2).click();
+    }
     public void dologOut(){
         lblButton.click();
         dropDownBtn.get(3).click();
