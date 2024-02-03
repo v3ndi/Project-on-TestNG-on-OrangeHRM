@@ -6,8 +6,8 @@ This project is a Selenium and TestNG automation project using Gradle.
 
 Make sure you have the following prerequisites installed on your machine:
 
-- Java JDK (version X.X or later)
-- Gradle (version X.X or later)
+- Java JDK 
+- Gradle
 - Web browser (Chrome, Firefox, etc.)
 
 ## How To Run This Project
